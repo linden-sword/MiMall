@@ -1,0 +1,1018 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+html {
+    background-color: #f5f5f5;
+}
+a {
+    text-decoration: none;
+}
+/*********** hearder Started ***********/
+header {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(51, 51, 51);
+}
+#topbar {
+    color: rgb(66, 66, 66);
+    width: 1226px;
+    height: 40px;
+    position: relative;
+    left: 175px;
+}
+#topbar .topbar_left {
+    line-height: 40px;
+    float: left;
+    position: relative;
+}
+#topbar a {
+    color: rgb(176, 176, 176);
+    text-decoration: none;
+}
+
+#topbar .topbar_right {
+    line-height: 40px;
+    float: right;
+    position: relative;
+}
+
+.shoppingCart {
+    width: 120px;
+    height: 40px;
+    color: #b0b0b0;
+    background-color: #424242;
+    display: inline-block;
+    text-align: center;
+    margin-left: 15px;
+    position: relative;
+    top: -1px;
+    margin-right: 14px;
+}
+.shoppingCart a {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+}
+.shoppingCart i {
+    font-size: 18px;
+    padding-right: 5px;
+}
+/* 购物车二级菜单 */
+.shoppingCart_2 {
+    width: 316px;
+    /* height: 99px; */
+    background-color: #fff;
+    text-align: center;
+    position: absolute;
+    right: 14px;
+    box-shadow: black 0 0 5px;
+    z-index: 11;
+    /* display: none; */
+/* 此处对购物车的二级菜单添加了过渡效果 */
+    height: 0;
+    overflow: hidden;
+    transition:height 0.6s;
+    -webkit-transition:height 0.5s;
+}
+/* 下载APP二级菜单 */
+.downloadApp {
+    width: 124px;
+    /* height: 148px; */
+    text-align: center;
+    position: absolute;
+    left: 480px;
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: black 0 0 5px;
+/* 此处对下载APP的二级菜单添加了过渡效果 */
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+    -webkit-transition: height 0.5s;
+}
+.downloadApp img {
+    width: 90px;
+    height: 90px;
+    margin: 18px 17px 0 17px;
+}
+.downloadApp p {
+    position: relative;
+    top: -10px;
+}
+.smallTriangle {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 538px;
+    top: 32.5px;
+/* 通过旋转小正方形45度并调整位置，达到小三角形的效果,然后隐藏，通过伪类触发 */
+    transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+    display: none;
+
+    background-color: #fff;
+    z-index: 13;
+}
+
+
+
+
+/* 鼠标悬停状态 Started */
+#topbar a:hover {
+    color: #fff;
+}
+.topbar_right .shoppingCart:hover #shoppingCart_a {
+    background-color: #fff;
+    color: #ff6700;
+}
+.topbar_right .shoppingCart:hover+.shoppingCart_2 {
+    /* display: block; */
+    height: 99px;
+    z-index: 11;
+}
+/* 解决鼠标移开链接到下方二级菜单时二级菜单也不收起的问题 */
+.topbar_right .shoppingCart_2:hover {
+    /* display: block; */
+    height: 99px;
+    z-index: 11;
+}
+#downloadApp:hover+.downloadApp {
+    height: 148px;
+    z-index: 10;
+}
+#downloadApp:hover+.downloadApp+.smallTriangle {
+    display: block;
+    z-index: 13;
+}
+/* 解决鼠标移开链接到下方二级菜单时二级菜单也不收起的问题 */
+.downloadApp:hover {
+    height: 148px;
+    z-index: 10;
+}
+.downloadApp:hover+.smallTriangle {
+    display: block;
+    z-index: 13;
+}
+
+/* 鼠标悬停状态 Ended */
+/*********** hearder Ended ***********/
+
+/*********** nav Started ***********/
+nav {
+    width: 100%;
+    background-color: #fff;
+}
+nav .nav_in {
+    width: 1226px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+nav .nav_in .nav_logo {
+    width: 234px;
+    height: 100px;
+    background-color: #fff;
+    float: left;
+}
+nav .nav_in .nav_logo img {
+    width: 56px;
+    height: 56px;
+    margin-top: 22px;
+}
+nav .nav_menu {
+    float: left;
+    line-height: 100px;
+}
+nav .nav_menu a {
+    font-size: 16px;
+    color: #333333;
+    padding: 26px 5px 38px;
+}
+nav .nav_menu a:hover {
+    color: #ff6700;
+}
+/* .nav_menu二级菜单 */
+nav .nav_menu .nav_menu_1 {
+    width: 100%;
+    /* height: 200px; */
+    height: 0;
+    
+/* 把这一句放下面伪类里，解决border-top: 1px #b0b0b0 solid;了收起来也有阴影的问题 */
+    /* box-shadow: black 0 3px 3px; */
+/* 此处做到了全屏显示二级菜单 */
+    position: absolute;
+    left: 0;
+/* 添加动态效果 */
+    transition: height 0.5s;
+    -webkit-transition: height 0.5s;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+nav .nav_menu .nav_menu_1 .nav_items {
+    width: 204px;
+    height: 200px;
+    text-align: center;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    background-color: #f5f5f5;
+}
+nav .nav_menu .nav_menu_1 .nav_items img {
+    padding-top: 35px;
+}
+.nav_items_p1 {
+    position: relative;
+    top: -80px;
+    color: #333333;
+}
+.nav_items_p2 {
+    position: relative;
+    top: -160px;
+    color: #ff6700;
+}
+nav .nav_menu .nav_menu_1 .nav_items:after {
+    content: " ";
+    display: inline-block;
+    width: 3px;
+    height: 160px;
+    background-color: #e0e0e0;
+    position: relative;
+    top: -380px;
+    left: 130px;
+}
+
+nav .nav_menu a:hover+.nav_menu_1{
+    height: 230px;
+    border-top: 1px #b0b0b0 solid;
+    box-shadow: #424242 0 8px 8px;
+    z-index: 10;
+}
+/* 解决鼠标移开链接到下方二级菜单时二级菜单也不收起的问题 */
+nav .nav_menu .nav_menu_1:hover{
+    height: 230px;
+    box-shadow: #424242 0 8px 8px;
+    z-index: 10;
+}
+
+nav .nav_searchFor {
+    float: right;
+    line-height: 100px;
+    position: relative;
+    font-size: 0;
+/* 这里发现一个问题：
+font-size：0写在前面的话，后面写浮动和定位会不生效！
+写后面就没有影响了 */
+}
+.nav_searchFor input {
+    border: 1px solid #b0b0b0;
+    width: 230px;
+    height: 50px;
+    color: #424242;
+    font-size: 14px;
+    padding-left: 15px;
+}
+.nav_searchFor .input_2 {
+    width: 230px;
+    /* height: 230px; */
+    height: 0;
+    padding-left: 15px;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    overflow: hidden;
+    z-index: 9;
+
+}
+.input_2 ul li {
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #424242;
+}
+.nav_searchFor i {
+    border: 1px solid #b0b0b0;
+    width: 52px;
+    height: 39.5px;
+    background-color: #fff;
+    color: #424242;
+    font-size: 25px;
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 10px;
+    position: relative;
+    top: 1px;
+}
+.nav_searchFor input:focus {
+/* input的text标签focus时默认有一个黑色的outline，需要取消才能使用focus的border */
+    outline: none;
+    border: 1px solid #ff6700;
+}
+.nav_searchFor input:focus+.input_2 {
+    height: 230px;
+    z-index: 9;
+    border: 1px solid #ff6700;
+}
+.nav_searchFor input:focus+.input_2+i {
+    border: 1px solid #ff6700;
+}
+.nav_searchFor i:hover {
+    border: 1px solid #ff6700;
+    background-color: #ff6700;
+    color: #fff;
+}
+/*********** nav Started ***********/
+
+
+/*********** banner Started ***********/
+.banner {
+    width: 1226px;
+    height: 460px;
+    margin: 0 auto;
+    position: relative;
+}
+.banner .banner_img{
+    width: 1226px;
+    height: 460px;
+    margin: 0 auto;
+    
+}
+.banner .banner_img img {
+    width: 1226px;
+    height: 460px;
+}
+
+.banner_menu {
+    height: 440px;
+    width: 234px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 0 0 20px;
+
+    background-color: rgba(155, 155, 163, 0.8);
+}
+.banner_menu ul li {
+    width: 234px;
+    height: 42px;
+    line-height: 42px;
+    list-style-type: none;
+}
+.banner_menu ul li i {
+    float: right;
+    line-height: 42px;
+    padding-right: 30px;
+}
+.banner_menu ul li a {
+    font-size: 14px;
+    color: #fff;
+    padding-left: 30px;
+    display: inline-block;
+    position: relative;
+    left: -20px;
+    width: 224px;
+    height: 42px;
+}
+.banner_menu ul li a:hover {
+    background-color: #ff6700;
+}
+/* 二级菜单 Started*/
+.banner_menu_2 {
+    width: 795px;
+    height: 458px;
+
+    background-color: #fff;
+    position: absolute;
+    top: 2px;
+    left: 254px;
+    display: none;
+}
+.banner_menu_2 .col_1 {
+    position: absolute;
+}
+.banner_menu_2 .col_2 {
+    position: absolute;
+    left: 265px;
+}
+.banner_menu_2 .col_3 {
+    position: absolute;
+    left: 530px;
+}
+.banner_menu_2 ul li {
+    width: 265px;
+    height: 74px;
+}
+.banner_menu_2 ul li img {
+    width: 44px;
+    height: 44px;
+    padding: 16px 20px;
+}
+.banner_menu_2 ul li p {
+    display: inline-block;
+    height: 43px;
+    width: 100px;
+    margin: 0;
+    padding:16px 0 ;
+    position: relative;
+    top: -35px;
+}
+.banner_menu ul li:hover+.banner_menu_2 {
+    display: block;
+    box-shadow: #424242 5px 5px 3px;
+}
+.banner_menu ul .banner_menu_2:hover {
+    display: block;
+}
+/* 二级菜单 Ended*/
+/*********** banner ENded  ***********/
+
+
+/*********** ad*4 Started  ***********/
+.ad_4 {
+    width: 1226px;
+    height: 170px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: #fff;
+}
+.ad_menu {
+    width: 234px;
+    height: 170px;
+    padding: 0 10px;
+    float: left;
+
+    background-color: #5f5750;
+}
+.ad_menu ul {
+    display: table;
+}
+.ad_menu ul li {
+    display: table-cell;
+    width: 70px;
+    height: 63px;
+    position: relative;
+    top: 20px;
+    left: 8px;
+    text-align: center;
+}
+.ad_menu ul li a {
+    color: #b0b0b0;
+    display: inline-block;
+    padding-top: 10px;
+}
+.ad_menu ul li a:hover {
+    color: #fff;
+}
+.ad_menu ul li a i {
+    font-size: 20px;
+}
+.ad_menu ul li:before {
+    content: " ";
+    display: inline-block;
+    background-color: #616161;
+    width: 2px;
+    height: 55px;
+    position: relative;
+    left: -10px;
+    top: 2px;
+}
+.ad_menu ul li:after {
+    content: " ";
+    background-color: #616161;
+    display: inline-block;
+    width: 55px;
+    height: 2px;
+    position: relative;
+    top: -75px;
+    left: -2px;
+}
+.ads {
+    float: right;
+}
+.ad1 {
+    width: 303px;
+    height: 170px;
+    padding-left: 20px;
+    float: left;
+}
+.ad1 img {
+    width: 303px;
+    height: 170px;
+}
+
+/*********** ad*4 ended  ***********/
+
+/*********** big_ad Started  ***********/
+.big_ad_1 {
+    width: 1226px;
+    height: 120px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f5f5f5;
+}
+.big_ad_1 img {
+    width: 1226px;
+    height: 120px;
+}
+/*********** big_ad Ended  ***********/
+
+
+/*********** 手机 Started  ***********/
+.phone {
+    width: 1226px;
+    height: 680px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+    background-color: #f5f5f5;
+}
+
+.phone_tit {
+    width: 1226px;
+    height: 57.28px;
+    position: relative;
+    top: 20px;
+}
+.tit_top {
+    font-size: 22px;
+    line-height: 57.28px;
+    color: #333;
+    padding-left: 10px;
+}
+.tit_top_right {
+    float: right;
+}
+.tit_top_right a {
+    color: #757575;
+    height: 30px;
+    position: relative;
+    top: -40px;
+    right: 20px;
+} 
+.tit_top_right a:hover {
+    color: #ff6700;
+} 
+.tit_top_2 {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 30px;
+}
+.tit_top_right i {
+    font-size: 20px;
+}
+.items td {
+    width: 234px;
+    height: 307px;
+    padding: 0px 5px;
+    text-align: center;
+
+    
+}
+.td_img_bigger a {
+    display: inline-block;
+    width: 230px;
+    height: 614px;
+    /* 添加过渡效果可以做到标签抬起的效果 */
+    transition: box-shadow 0.7s;
+    -webkit-transition: box-shadow 0.7s;
+}
+.img_bigger {
+    width: 230px;
+    height: 614px;
+}
+.td_img_sq a {
+    display: inline-block;
+    width: 214px;
+    height: 300px;
+    background-color: #fff;
+/* 添加过渡效果可以做到标签抬起的效果 */
+    transition: box-shadow 0.7s;
+    -webkit-transition: box-shadow 0.7s;
+}
+.td_img_sq a:hover {
+    box-shadow: #5f5750 10px 10px 10px;
+}
+.td_img_bigger a:hover {
+    box-shadow: #5f5750 10px 10px 10px;
+}
+.img_sq {
+    width: 160px;
+    height: 160px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.img_sq_p1 {
+    color: #333;
+    font-size: 14px;
+}
+.img_sq_p2 {
+    color: #b0b0b0;
+    padding-top: 5px;
+}
+.img_sq_p3 {
+    color: #ff6700;
+    padding-top: 15px;
+}
+/*********** 手机 Ended  ***********/
+
+/*********** 家电 Started  ***********/
+.appliance {
+    width: 1226px;
+    height: 680px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+    background-color: #f5f5f5;
+}
+
+.appliance_tit {
+    width: 1226px;
+    height: 57.28px;
+}
+.item_tit {
+    font-size: 22px;
+    line-height: 57.28px;
+    color: #333;
+    padding-left: 20px;
+}
+.item_link {
+    float: right;
+    font-size: 16px;
+    color: #424242;
+    padding-right: 17px;
+    position: relative;
+    top: -38px;
+}
+.item_link a {
+    font-size: 16px;
+    color: #424242;
+    padding-left: 15px;
+}
+.item_link a:hover {
+    color: #ff6700;
+}
+
+.td_img_sq .special {
+    display: inline-block;
+    width: 214px;
+    height: 136px;
+    text-align: left;
+    /* 添加过渡效果可以做到标签抬起的效果 */
+    transition: box-shadow 0.7s;
+    -webkit-transition: box-shadow 0.7s;
+}
+.img_full {
+    width: 214px;
+    height: 300px;
+}
+.sp1 {
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+.sp1_sq_p1 {
+    color: #5f5750;
+    font-size: 14px;
+    width: 94px;
+    height: 42px;
+    padding-top: 40px;
+    padding-left: 30px;
+}
+.sp1_sq_p2{
+    color: #ff6700;
+    width: 94px;
+    height: 42px;
+    padding-left: 30px;
+}
+.sp1_img {
+    width: 80px;
+    height: 80px;
+    float: right;
+    position: relative;
+    top: -90px;
+    right: 20px;
+}
+.sp2 {
+    margin-top: 12px;
+}
+.sp2_sq_p1 {
+    font-size: 18px;
+    color: #333;
+    padding-top: 50px;
+    padding-left: 30px;
+}
+.sp2_sq_p2 {
+    color: #757575;
+    padding-left: 30px;
+}
+.sp_2 .sp_c {
+    width: 214px;
+    height: 136px;
+}
+.sp2 i {
+    float: right;
+    font-size: 50px;
+    padding-right: 30px;
+    color: #ff6700;
+    position: relative;
+    top: -45px;
+}
+
+/*********** 家电 Ended  ***********/
+
+/***********视频 Started***********/
+.video {
+    width: 1226px;
+    margin: 0 auto;
+}
+.video_4p {
+    width: 1226px;
+    height: 285px;
+    margin: 0 auto;
+    display: table;
+}
+.videos {
+    width: 296px;
+    height: 285px;
+    display: table-cell;
+    text-align: center;
+}
+.videos a {
+    display: inline-block;
+    width: 296px;
+    height: 285px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    transition: box-shadow 0.8s;
+    -webkit-transition: box-shadow 0.8s;
+}
+.videos img {
+    width: 296px;
+    height: 180px;
+}
+.videos a p {
+    margin-top: 25px;
+}
+.videos a:hover {
+    box-shadow: #5f5750 10px 10px 10px;
+}
+/***********视频 Ended***********/
+
+/***********top_footer Started***********/
+
+.top_footer {
+    width: 1226px;
+    height: 330px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    background-color: #fff;
+}
+
+.top_footer_a {
+    width: 1190px;
+    height: 79px;
+    border-bottom: 1px #757575 solid;
+    margin: 0 auto;
+}
+.top_footer_a_items {
+    float: left;
+    width: 230px;
+    height: 79px;
+    text-align: center;
+    padding-top: 30px;
+}
+.top_footer_a_items a {
+    font-size: 16px;
+    color: #616161;
+}
+.top_footer_a_items a:hover {
+    color: #ff6700;
+}
+.line a {
+    position: relative;
+    top: -22px;
+}
+.line:after {
+    content: " ";
+    display: inline-block;
+    width: 2px;
+    height: 39px;
+    background-color: #b0b0b0;
+    position: relative;
+    top: -8px;
+    left: 50px;
+}
+.top_footer_b {
+    margin-left: 15px;
+}
+.top_footer_b ul {
+    float: left;
+    width: 160px;
+    list-style: none;
+}
+.top_footer_b ul li p {
+    font-size: 14px;
+    color: #424242;
+    margin-bottom: 20px;
+}
+.top_footer_b ul li a {
+    color: #757575;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.top_footer_b ul li a:hover {
+    color: #ff6700;
+}
+.tels {
+    float: right;
+    text-align: center;
+    position: relative;
+    right: 260px;
+    top: -200px;
+}
+.tels:before {
+    content: " ";
+    display: inline-block;
+    width: 2px;
+    height: 110px;
+    background-color: #b0b0b0;
+    position: absolute;
+    top: -18px;
+    right: 197px
+}
+.tels .p1 {
+    font-size: 22px;
+    color: #ff6700;
+}
+.tels .p2 {
+    color: #616161;
+}
+.butt a {
+    color: #ff6700;
+    display: inline-block;
+    border: #ff6700 1px solid;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+} 
+.butt a:hover {
+    color: #fff;
+    background-color: #ff6700;
+} 
+
+.p3_p .p3 {
+    color: #616161;
+    display: inline-block;
+}
+.p3_p a {
+    color: #757575;
+}
+.p3_p a:hover {
+    color: #ff6700;
+}
+/***********top_footer Ended***********/
+
+/*********** footer Started ***********/
+footer {
+    width: 1226px;
+    height: 264.09px;
+
+    margin: 0 auto;
+    background-color: #f5f5f5;
+}
+.footer_info {
+    padding-top: 30px;
+}
+.footer_logo_mi {
+
+    height: 109px;
+    float: left;
+}
+.footer_text {
+    margin-left: 100px;
+}
+.link_text1 {
+    color: #757575;
+}
+.link_text2 {
+    color: #b0b0b0;
+}
+.link_text1 a {
+    color: #757575;
+}
+.link_text2 a {
+    color: #b0b0b0;
+}
+.link_text1 a:hover {
+    color: #ff6700;
+}
+.link_text2 a:hover {
+    color: #ff6700;
+}
+.footer_logo_bottom img {
+    width: 85px;
+    height: 28px;
+}
+.saying {
+    width: 1292.37px;
+    text-align: center;
+    margin-top: 30px;
+    color: #5f5750;
+    font-size: 20px;
+    font-family: 楷体;
+}
+/*********** footer Ended ***********/
+
+/***********aside Started***********/
+
+.top_p5 {
+    width: 80px;
+    height: 400px;
+    position: fixed;
+    right: 0;
+    bottom: 190px;
+    box-shadow: #b0b0b0 0 0 2px;
+    background-color: #fff;
+    z-index: 15;
+}
+.top_p5 ul li {
+    width: 80px;
+    height: 80px;
+    list-style: none;
+    text-align: center;
+}
+.top_p5 ul li a i {
+    color: #999;
+    font-size: 30px;
+    margin-top: 10px;
+}
+.top_p5 ul li a p {
+    color: #999;
+    font-size: 16px;
+}
+.top_p5 ul li a:hover i {
+    color: #ff6700;
+}
+.top_p5 ul li a:hover p {
+    color: #ff6700;
+}
+.back {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    position: fixed;
+    right: 0;
+    bottom: 100px;
+    text-align: center;
+    box-shadow: #b0b0b0 0 0 2px;
+}
+.back a p {
+    color: #999;
+    font-size: 16px;
+}
+.back a i {
+    color: #999;
+    font-size: 40px;
+    margin-top: 10px;
+}
+.back a:hover p {
+    color: #ff6700;
+}
+.back a:hover i {
+    color: #ff6700;
+}
+.app_bott {
+    /* width: 130px; */
+    width: 0;
+    overflow: hidden;
+    height: 192px;
+    background-color: #fff;
+    box-shadow: #757575 0 0 5px;
+    text-align: center;
+    position: fixed;
+    right: 85px;
+    bottom: 397px;
+    transition: width 0.5s;
+    -webkit-transition: width 0.5s;
+}
+.app_bott img {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.app_bott p {
+    font-size: 14px;
+    width: 80px;
+    margin: 0 auto;
+}
+.aside_sp:hover+.app_bott {
+    width: 130px;
+}
+/***********aside Ended***********/
